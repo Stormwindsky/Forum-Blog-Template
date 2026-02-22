@@ -1,2 +1,2 @@
-# Forum-Test
-this is just a test
+# Forum Blog Template
+this is just a test (4 now)

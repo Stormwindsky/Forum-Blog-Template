@@ -1,2 +1,4 @@
-# Forum Blog Template
-this is just a test (4 now)
+# Forum / Blog Template
+How to use this?
+
+https://github.com/Stormwindsky/Forum-Blog-Template/blob/main/How%20to%20use%20this%3F.md

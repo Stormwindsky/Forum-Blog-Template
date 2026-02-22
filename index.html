@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Blog-Forum Template (CC0)</title>
+    <title>Forum-Blog Template | Stormwindsky</title>
     <style>
-        /* CSS: Minimalist & Modern UI */
+        /* CSS: Modern GitHub-style UI */
         :root {
-            --primary-color: #0969da;
-            --border-color: #d0d7de;
-            --bg-color: #f6f8fa;
-            --card-bg: #ffffff;
-            --text-main: #24292f;
-            --text-muted: #57606a;
+            --primary: #0969da;
+            --border: #d0d7de;
+            --bg: #f6f8fa;
+            --card: #ffffff;
+            --text: #24292f;
+            --muted: #57606a;
+        }
+
+        /* Dark mode support for the container */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0d1117;
+                --card: #161b22;
+                --text: #c9d1d9;
+                --border: #30363d;
+                --muted: #8b949e;
+            }
         }
 
         body {
@@ -21,50 +32,43 @@
             max-width: 850px;
             margin: 0 auto;
             padding: 2rem 1rem;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background 0.3s ease;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        h1 { margin-bottom: 0.5rem; color: var(--text-main); }
-        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        header { text-align: center; margin-bottom: 3rem; }
+        .subtitle { color: var(--muted); font-size: 1.1rem; }
 
         .content-card {
-            background: var(--card-bg);
+            background: var(--card);
             padding: 2.5rem;
             border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
-        /* Giscus spacing */
-        .giscus-container {
+        .giscus-section {
             margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
+            min-height: 200px;
         }
 
         footer {
-            margin-top: 4rem;
+            margin-top: 5rem;
             text-align: center;
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--muted);
         }
 
-        a { color: var(--primary-color); text-decoration: none; }
+        a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        .license-tag {
+        .license-badge {
             display: inline-block;
-            background: #e1e4e8;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 0.75rem;
+            border: 1px solid var(--border);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
     </style>
@@ -72,63 +76,43 @@
 <body>
 
     <header>
-        <h1>Static Blog-Forum</h1>
-        <p class="subtitle">Powered by GitHub Pages & Giscus</p>
+        <h1>Forum-Blog Template</h1>
+        <p class="subtitle">A static discussion space powered by GitHub</p>
     </header>
 
     <main class="content-card">
         <article>
-            <h2>Template Post Title</h2>
-            <p>Welcome to your new static blog. This page serves as a single-entry template where the "blog post" is the HTML content above, and the "forum" is the Giscus comment section below.</p>
-            <p>To use this for a real post, simply edit the HTML of this file and update the configuration script at the bottom.</p>
+            <h2>Hello World!</h2>
+            <p>Welcome to this CC0-licensed template. This setup uses <strong>GitHub Discussions</strong> as a backend via Giscus. Every page on this site automatically generates a corresponding discussion thread on GitHub.</p>
+            <p>To write your own post, simply replace the text in this <code>&lt;article&gt;</code> tag.</p>
         </article>
 
-        <section class="giscus-container">
-            <div id="giscus-slot"></div>
+        <section class="giscus-section">
+            <script src="https://giscus.app/client.js"
+                data-repo="Stormwindsky/Forum-Blog-Template"
+                data-repo-id="R_kgDORWTtbg"
+                data-category="Announcements"
+                data-category-id="DIC_kwDORWTtbs4C3ABe"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+            </script>
         </section>
     </main>
 
     <footer>
-        <span class="license-tag">CC0 1.0</span>
+        <div class="license-badge">CC0 1.0 Universal</div>
         <p>
-            This template is released under the 
-            <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">Creative Commons Zero v1.0 Universal</a>.
-            <br>Public Domain: No rights reserved. Feel free to copy, modify, and distribute.
+            Dedicated to the public domain. 
+            <br>Built by <a href="https://github.com/Stormwindsky">Stormwindsky</a>.
         </p>
     </footer>
-
-    <script>
-        /**
-         * GISCUS CONFIGURATION
-         * 1. Go to https://giscus.app
-         * 2. Configure your public repo settings
-         * 3. Replace the placeholder values below:
-         */
-        const GISCUS_SETTINGS = {
-            "src": "https://giscus.app/client.js",
-            "data-repo": "YOUR_USERNAME/YOUR_REPO_NAME", 
-            "data-repo-id": "R_REPLACE_THIS",
-            "data-category": "Announcements",
-            "data-category-id": "DIC_REPLACE_THIS",
-            "data-mapping": "pathname",
-            "data-strict": "0",
-            "data-reactions-enabled": "1",
-            "data-emit-metadata": "0",
-            "data-input-position": "top",
-            "data-theme": "light",
-            "data-lang": "en", // Set to English
-            "crossorigin": "anonymous",
-            "async": true
-        };
-
-        // Injecting the script into the DOM
-        const giscusScript = document.createElement("script");
-        Object.entries(GISCUS_SETTINGS).forEach(([key, value]) => {
-            giscusScript.setAttribute(key, value);
-        });
-        
-        document.getElementById("giscus-slot").appendChild(giscusScript);
-    </script>
 
 </body>
 </html>

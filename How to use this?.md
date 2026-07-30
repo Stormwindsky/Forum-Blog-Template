@@ -35,7 +35,7 @@ For a visual guide on how Giscus works and how to set it up, I highly recommend 
 ---
 
 ## ⚖️ License
-This template is released under the **CC0 1.0 Universal (Public Domain)** license. You can copy, modify, and distribute it, even for commercial purposes, without asking permission or providing attribution.
+This template is released under the **MIT-0 (Public Domain)** license. You can copy, modify, and distribute it, even for commercial purposes, without asking permission or providing attribution.
 
 ---
 *Built with ❤️ by [Stormwindsky](https://github.com/Stormwindsky)*
